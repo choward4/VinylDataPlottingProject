@@ -29,7 +29,7 @@ def yearBarChart(years, gpa, colors):
     plt.ylabel('Average GPA')
     plt.ylim(min(averagedGpa.values()) - 0.5, 4.0)
     plt.bar(years, averagedGpa.values(), color='royalblue')
-    addlabels(numpy.round_(list(averagedGpa.values()), decimals = 3))
+    addlabels(np.round_(list(averagedGpa.values()), decimals = 3))
 
     # Setup Year-NumberAlbumsRated Bar Chart
     plt.figure(4)
@@ -63,7 +63,7 @@ def gradedCharts(valueNames, values, colors):
 
 if __name__ == "__main__":
 
-    xlsx = openpyxl.load_workbook('Vinyl_Collection_201022.xlsx')
+    xlsx = openpyxl.load_workbook('../Vinyl_Collection_201022.xlsx')
 
     sheet = xlsx.active
 
@@ -97,7 +97,7 @@ if __name__ == "__main__":
         
         try:
 
-            if c1.value == None:
+            if c1.value == None or c1.value == ' ':
                 values[0] += 1
             elif c1.value == "A+":
                 values[1] += 1
@@ -127,7 +127,7 @@ if __name__ == "__main__":
                 values[9] += 1
                 gpa[str(c5.value)[0:3]].append(0.0)
             else:
-                print("unexpected data c1.value = '" + c1.value + "' at counter")
+                print("unexpected data c1.value = '" + c1.value + "' at counter " + str(counter))
 
         except KeyError:
             print("year format exception at line " + str(counter))
