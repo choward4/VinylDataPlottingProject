@@ -29,7 +29,9 @@ def yearBarChart(years, gpa, colors):
     plt.ylabel('Average GPA')
     plt.ylim(min(averagedGpa.values()) - 0.5, 4.0)
     plt.bar(years, averagedGpa.values(), color='royalblue')
+    addlabels(list(averagedGpa.values()))
 
+    # Setup Year-NumberAlbumsRated Bar Chart
     plt.figure(4)
     plt.title('Number Of Rated Albums In Different Time Periods')
     plt.xlabel('Time Periods')
