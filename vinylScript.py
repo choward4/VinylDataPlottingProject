@@ -63,7 +63,7 @@ def gradedCharts(valueNames, values, colors):
 
 if __name__ == "__main__":
 
-    xlsx = openpyxl.load_workbook('../Vinyl_Collection_201022.xlsx')
+    xlsx = openpyxl.load_workbook('../Vinyl_Collection_210617_Excel.xlsx')
 
     sheet = xlsx.active
 
